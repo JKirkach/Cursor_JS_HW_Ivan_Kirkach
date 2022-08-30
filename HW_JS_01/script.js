@@ -14,6 +14,7 @@ const Sum_with_RandDiscount = SumPrice - ((SumPrice/100) * RandDiscount);
 const PureProfit = SumPrice/2 - ((SumPrice/100) * RandDiscount);
 
 
+
 console.log ("Max price is - " + MaxPrice); //123.965
 console.log ("Min price is - " + MinPrice); //15.678
 console.log (SumPrice); //229.8775
@@ -31,7 +32,7 @@ const list = `
                 <div>Мінімальна ціна ${MinPrice} грн</div>
                 <div>Сума товарів ${SumPrice} грн</div>
                 <div>Сума почерзі округлених товарів в меншу сторону ${SumFloorPrice} грн</div>
-                <div>Чи сума округлених товарів є цілим числом ${SumFloorPrice %2 == 0}</div>
+                <div>Чи сума округлених товарів є цілим числом -  ${SumFloorPrice %2 == 0}</div>
                 <div>Здача з 500 грн = ${change.toFixed(2)} грн</div>
                 <div>Середня ціна товарів = ${av_val.toFixed(2)} грн</div>
                 <div>Випадкова знижка = ${RandDiscount.toFixed(1)} %</div>
