@@ -1,16 +1,17 @@
-let cola = 15.678;
-let whiskey = 123.965;
-let beer = 90.2345;
-let SumPrice = cola+whiskey+beer; //229.8775
-let MaxPrice = Math.max(cola,whiskey,beer);
-let MinPrice = Math.min(cola,whiskey,beer);
-let SumFloorPrice = Math.floor(cola)+Math.floor(whiskey)+Math.floor(beer); //228
-let SumRound = (Math.round(SumFloorPrice/100)*100); //200
-let change = 500 - 229.8775;
-let av_val = SumPrice/3;
-let RandDiscount = Math.random()*100;
-let Sum_with_RandDiscount = SumPrice - ((SumPrice/100) * RandDiscount);
-let PureProfit = SumPrice/2 - ((SumPrice/100) * RandDiscount);
+const cola = 15.678;
+const whiskey = 123.965;
+const beer = 90.2345;
+const SumPrice = cola+whiskey+beer; //229.8775
+const MaxPrice = Math.max(cola,whiskey,beer);
+const MinPrice = Math.min(cola,whiskey,beer);
+const SumFloorPrice = Math.floor(cola)+Math.floor(whiskey)+Math.floor(beer); //228
+const SumRound = (Math.round(SumFloorPrice/100)*100); //200
+const clientMoney = 500;
+const change = clientMoney - SumPrice;
+const av_val = SumPrice/3;
+const RandDiscount = Math.random()*100;
+const Sum_with_RandDiscount = SumPrice - ((SumPrice/100) * RandDiscount);
+const PureProfit = SumPrice/2 - ((SumPrice/100) * RandDiscount);
 
 
 console.log ("Max price is - " + MaxPrice); //123.965
@@ -25,17 +26,17 @@ console.log(RandDiscount);
 console.log((Sum_with_RandDiscount).toFixed(2));
 console.log(PureProfit);
 
-let list = `
-                <h4>Максимальна ціна ${MaxPrice} грн</h4>
-                <h4>Мінімальна ціна ${MinPrice} грн</h4>
-                <h4>Сума товарів ${SumPrice} грн</h4>
-                <h4>Сума почерзі округлених товарів в меншу сторону ${SumFloorPrice} грн</h4>
-                <h4>Чи сума округлених товарів є цілим числом ${SumFloorPrice %2 == 0}</h4>
-                <h4>Здача з 500 грн = ${change.toFixed(2)} грн</h4>
-                <h4>Середня ціна товарів = ${av_val.toFixed(2)} грн</h4>
-                <h4>Випадкова знижка = ${RandDiscount} %</h4>
-                <h4>Сума з урахуванням знижки ${(Sum_with_RandDiscount).toFixed(2)} грн</h4>
-                <h4>Чистий прибуток = ${PureProfit} грн</h4>` ;
+const list = `
+                <div>Максимальна ціна ${MaxPrice} грн</div>
+                <div>Мінімальна ціна ${MinPrice} грн</div>
+                <div>Сума товарів ${SumPrice} грн</div>
+                <div>Сума почерзі округлених товарів в меншу сторону ${SumFloorPrice} грн</div>
+                <div>Чи сума округлених товарів є цілим числом ${SumFloorPrice %2 == 0}</div>
+                <div>Здача з 500 грн = ${change.toFixed(2)} грн</div>
+                <div>Середня ціна товарів = ${av_val.toFixed(2)} грн</div>
+                <div>Випадкова знижка = ${RandDiscount.toFixed(1)} %</div>
+                <div>Сума з урахуванням знижки ${(Sum_with_RandDiscount).toFixed(2)} грн</div>
+                <div>Чистий прибуток = ${PureProfit.toFixed(2)} грн</div>` ;
 
 
 document.getElementById("calculation").innerHTML = list;
