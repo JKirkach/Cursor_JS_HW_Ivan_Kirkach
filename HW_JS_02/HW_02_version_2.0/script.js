@@ -8,7 +8,8 @@ let whole_num_M = Number.isInteger(M);
 console.log("N is " + typeof(N));
 console.log("M is " + typeof(M));
 
-
+document.writeln(`Мінімальне число = <b> ${minNumber}; </b> <br>`);
+document.writeln(`Максимальне число = <b> ${maxNumber}; </b> <br>`);
     
 if (Number.isInteger(minNumber) && Number.isInteger(maxNumber)) {
     if (minNumber>maxNumber) {
@@ -16,6 +17,7 @@ if (Number.isInteger(minNumber) && Number.isInteger(maxNumber)) {
         console.log("error - N >M");
     } else {
         var skip_even_numbers = confirm("пропускаєм парні числа?");
+        document.writeln(`пропускаєм парні числа? - <b> ${skip_even_numbers}; </b> <br>`);
         let counter = N;
         var Sum_N_to_M=0;
         
@@ -24,6 +26,9 @@ if (Number.isInteger(minNumber) && Number.isInteger(maxNumber)) {
                 
                 counter++;
                 N=N+counter;
+                if (counter == M) {
+                    document.writeln(`Сума = <b> ${N}; </b> <br>`);
+                }
             } while (counter <M);
         } else {
             do {
@@ -37,10 +42,10 @@ if (Number.isInteger(minNumber) && Number.isInteger(maxNumber)) {
                     
                     counter++;
                     console.log("vuvid" + counter);
-                    
-                    if (counter==M) {
-                        N=Sum_N_to_M;
+                    if (counter==M || counter>M) {
+                        document.writeln(`Сума = <b> ${Sum_N_to_M}; </b> <br>`);
                     }
+                    
                 }
             } while (counter <=M);
         }
@@ -62,10 +67,10 @@ if (Number.isInteger(minNumber) && Number.isInteger(maxNumber)) {
         }
     }
 }
-document.writeln(`Мінімальне число = <b> ${minNumber}; </b> <br>`);
-document.writeln(`Максимальне число = <b> ${maxNumber}; </b> <br>`);
-document.writeln(`Пропускаєм парні числа ? = <b> ${skip_even_numbers}; </b> <br>`);
-document.writeln(`Сума = <b> ${Sum_N_to_M}; </b> <br>`);
+
+
+
+
 
 
 
